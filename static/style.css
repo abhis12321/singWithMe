@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#nav {
+    height: 7vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-shadow: 0 0 5pc rgb(61, 61, 61);
+}
+.nav-tag {
+    margin-left: 20px;
+}
+.nav-tag-a {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+}
+.nav-tag-a:hover {
+    background-color: rgb(61, 60, 60);
+    color: white;
+    transform: scale(2);
+}

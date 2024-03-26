@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singWithMe</title>
+    {{!-- <link rel="icon" href="img/favicon-32x32.png"> --}}
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AADzzwAA48cAAMPDAADDwwAAw8MAAOPHAAD73wAA+98AANvbAACL0QAArDsAAP//AAD//wAA" rel="icon" type="image/x-icon">
+    
+</head>
+<body>
+    {{>nav}}
+    
+    <div class="music-card-cant">
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio" src='music/all-is-well.mp3' id="01" loop ></audio>
+            <h2>All is well....</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio" src='music/yaad-aa-rhi-hai.mp3' id="02" loop ></audio>
+            <h2>yaad aa rhi hai...</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)" ></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio"  src='music/tu-cheez-bdi-hai-mast.mp3' id="03" loop ></audio>
+            <h2>Tu cheez vdi hai mast mast....</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio" src='music/om-shanti-om.mp3' id="04" loop > </audio>
+            <h2>Om shanti Om...</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio"  src='music/peele-peele.mp3' id="05" loop ></audio>
+            <h2>Peele peele o meri jaani...</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio"  src='music/meri-jindgi-me-aana.mp3' id="06" loop ></audio>
+            <h2>meri jidgi me aana....</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+         </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio" src='music/log=kehte-hain.mp3' id="07" loop ></audio>
+            <h2>Log kehte hai mai sarabi hun...</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio" src='music/kehdun-tumhe.mp3' id="08" loop ></audio> 
+            <h2>Keh du tumhe ya chup rhun...</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio" src='music/ae-guajarane-wali.mp3' id="09" loop ></audio>
+            <h2>Ae gujarne wali hwa...</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <span></span>
+            <button></button>
+            <audio class="audio" src='music/hey-ram.mp3' id="10" loop ></audio>
+            <h2>Hey raam...</h2>
+            
+            <img src="img/ab2.jpg" alt="" class="nr">
+            <div class="card-control">  
+                <i class="fa-solid fa-backward mr-10 hidden" title="prev" onclick="handlePrev(event)"></i> 
+                <i class="fa-solid fa-play mr-10" title="play" onclick="handlePlay(event)"></i> 
+                <i class="fa-solid fa-forward mr-10 hidden" title="next" onclick="handleNext(event)"></i> 
+            </div>
+        </div>
+    </div>
+        
+
+
+
+    <script>
+        let prev = null;
+
+        const handlePrev = e => {
+            let par = e.target.parentElement.parentElement.previousElementSibling;
+            if(par) {
+                let audio = par.getElementsByClassName('audio')[0];                      
+                if(audio.paused) {
+                    if(prev) pause(prev);            
+                    play(par);
+                }
+                else {  
+                    pause(par);
+                }                
+                prev = par;
+            }
+        }
+        const handleNext = e => {
+            let par = e.target.parentElement.parentElement.nextElementSibling;
+            if(par) {
+                let audio = par.getElementsByClassName('audio')[0];                      
+                if(audio.paused) {
+                    if(prev) pause(prev);            
+                    play(par);
+                }
+                else {  
+                    pause(par);
+                }                
+                prev = par;
+            }
+        }
+
+
+        const handlePlay =  e => {
+            let par = e.target.parentElement.parentElement;   
+            let audio = par.getElementsByClassName('audio')[0];             
+                
+            if(audio.paused) {
+                if(prev) pause(prev);            
+                play(par);
+            }
+            else {  
+                pause(par);
+            }                
+            prev = par;
+        }
+        const play = par => {
+            let audio = par.getElementsByClassName('audio')[0];
+            let play = par.getElementsByClassName('fa-solid')[1];
+            let img = par.getElementsByClassName('nr')[0];
+            let hidden = par.getElementsByClassName('hidden');
+            
+
+            audio.play();
+            console.log(play , img , hidden[0] , hidden[1]);
+            img.classList.replace('nr' , 'rotate');
+            play.classList.replace('fa-play' , 'fa-pause');
+            hidden[0].classList.replace('hidden' , 'hd');
+            hidden[0].classList.replace('hidden' , 'hd');
+        }
+        const pause = par => {
+            let audio = par.getElementsByClassName('audio')[0];
+            let play = par.getElementsByClassName('fa-solid')[1];
+            let img = par.getElementsByClassName('rotate')[0];
+            let hidden = par.getElementsByClassName('hd');
+            
+            audio.pause();
+            play.classList.replace('fa-pause' , 'fa-play');
+            img.classList.replace('rotate' ,'nr');
+            hidden[0].classList.replace('hd' , 'hidden');
+            hidden[0].classList.replace('hd' , 'hidden');
+        }
+    </script>
+</body>
+</html>
