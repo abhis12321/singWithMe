@@ -4,13 +4,17 @@ import Image from 'next/image';
 import React from 'react'
 
 export default function MusicCard(props) {
-    const playMusic = e => {
-        let music = e.target.nextElementSibling;
-        let musicAvatar = e.target.previousElementSibling;
-        musicAvatar.classList?.toggle('animate-spin')
-        music.play();
-
-        console.log(music);
+    const playMusic = () => {
+        let cantainer = document.querySelector(`#${props.data.name}`);
+        let audio = cantainer.querySelector('audio');
+        let musicAvatar = cantainer.querySelector('p');
+        if(audio.paused) {
+            musicAvatar.classList.toggle('animate-spin')
+            audio.play();
+        } else {
+            musicAvatar.classList.toggle('animate-spin')
+            audio.pause();
+        }
     }
 
     const handleMusic = e => {
@@ -19,12 +23,13 @@ export default function MusicCard(props) {
         svgs[0]?.classList?.toggle('hidden');
         svgs[1]?.classList?.toggle('block');
         svgs[1]?.classList?.toggle('hidden');
+        playMusic();
     }
     return (
-        <div className='flex flex-col items-center justify-evenly pb-3 bg-slate-900 h-[400px] min-w-[300px] mx-auto rounded-md shadow-[0_0_8px_white] hover:shadow-[0_0_12px_red]'>
-            <h2 className="my-4 font-bold text-2xl drop-shadow-[0_0_7px_violet]">{props.data.name}</h2>
-            <div className="w-[200px] h-[200px] [background-image:conic-gradient(red , yellow , green , blue , red)] bg-conic-gradient rounded-full border-4 animate-spin"></div>
-            <button onClick={playMusic} className=' text-yellow-500 font-semibold'>{props.data.singer}</button>
+        <div id={props.data.name} className='flex flex-col items-center justify-evenly pb-3 bg-slate-900 h-[400px] w-[300px] mx-auto rounded-md shadow-[0_0_8px_white] hover:shadow-[0_0_12px_red]'>
+            <h2 className="my-4 font-bold text-2xl drop-shadow-[0_0_7px_violet] p-2 text-center">{props.data.name}</h2>
+            <p className="w-[200px] h-[200px] [background-image:conic-gradient(red , yellow , green , blue , red)] bg-conic-gradient rounded-full border-4"></p>
+            <div className=' text-yellow-500 font-semibold'>{props.data.singer}</div>
             <audio src={'/music/' + props.data.name + '.mp3'} className=''></audio>
 
             <div className="flex items-center justify-around w-full">
