@@ -12,8 +12,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="bg-slate-950 text-white">
-      <body className={inter.className}>
+    <html lang="en" className="">
+      <body className="bg-gray-300 text-gray-300 dark:bg-slate-950 dark:text-white">
         <NavBar />
         <div className="" style={{minHeight:'calc(100vh - 4rem)'}}>
           {children}
