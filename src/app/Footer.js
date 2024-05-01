@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from 'next/link';
 import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 export default function Footer() {
   return (
@@ -52,18 +53,18 @@ export default function Footer() {
         <div className="flex justify-center md:justify-around gap-4 items-start w-full md:w-[60%]">
           <div className="flex flex-col gap-2 justify-between items-start">
             <Link href={'/'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>home</Link>
-            <Link href={'/about'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>about</Link>
-            <Link href={'#learnings'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>learnings</Link>
+            <Link href={'/bhakti'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>bhakti songs</Link>
+            <Link href={'patriotic'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>patriotic songs</Link>
           </div>
           <div className="flex flex-col gap-2 justify-between items-start">
-            <Link href={'/projects'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>projects</Link>
-            <Link href={'/contact'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>contact</Link>
-            <Link href={'https://student-login-app-nextjs.onrender.com/'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center' target='_blank'>chat with me</Link>
+            <Link href={'/hindi'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>hindi songs</Link>
+            <Link href={'/bhojpuri'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>bhojpuri songs</Link>
+            <Link href={'/english'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center' target='_blank'>english songs</Link>
           </div>
         </div>
       </div>
 
-      <div className="text-gray-500 text-center p-2 font-semibold"> <span className='font-bold'>©</span>singWithMe! A public music platform!!</div>
+      <div className="text-gray-500 text-center p-2 font-semibold"> <FontAwesomeIcon icon={faCopyright} className='text-sm'/> singWithMe! A public music platform!!</div>
     </div>
   )
 }
