@@ -16,11 +16,11 @@ export default function NavBar() {
   return (
     <div className="w-full bg-gradient-to-b from-white to-slate-500 dark:from-slate-950 dark:to-slate-800 lg:text-red-900 dark:text-gray-300 font-semibold dark:font-medium flex items-center justify-between h-16 px-4 xm:px-8 overflow-hidden">
       <div className="">
-        <h2 className="font-bold text-3xl text-center rounded-md text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 w-fit leading-[4rem]"><span>#</span>singWithMe</h2>
+        <h2 className="font-bold text-3xl text-center rounded-md text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-600 w-fit leading-[4rem]"><span>#</span>singWithMe</h2>
       </div>
 
-      <div className="right-navbar fixed lg:static top-0 right-0 hidden lg:flex gap-1 bg-gradient-to-r lg:[background:none] from-slate-800 to-slate-950 min-h-[100vh] lg:min-h-fit z-10 items-center min-w-[170px]">
-        <div className="text-4xl py-3 hover:text-red-800 text-center cursor-pointer" onClick={handleRight}>
+      <div className="right-navbar fixed lg:static top-0 right-0 hidden lg:flex gap-1 bg-gradient-to-r lg:[background:none] from-gray-700 to-gray-600  dark:from-slate-800 dark:to-slate-950 min-h-[100vh] lg:min-h-fit z-10 items-center min-w-[170px]">
+        <div className="text-4xl py-2 hover:text-red-800 text-center cursor-pointer" onClick={handleRight}>
           <FontAwesomeIcon icon={faXmark} size='sm' className="hidden cutX" />
         </div>
 
