@@ -62,7 +62,7 @@ export default function MusicCard(props) {
       }
     
     return (
-        <div id={props.data.name} className='flex flex-col items-center justify-evenly pb-3 bg-gradient-to-b from-white to-slate-500 dark:from-slate-950 dark:via-slate-700 dark:to-gray-950 min-h-[400px] w-[300px] mx-auto rounded-md shadow-[0_0_8px_indigo] dark:shadow-[0_0_8px_white] hover:shadow-[0_0_12px_red] text-gray-700 dark:text-white'>
+        <div id={props.data.name} className='flex flex-col items-center justify-around pb-3 bg-gradient-to-b from-gray-200 to-slate-500 dark:from-slate-950 dark:via-slate-700 dark:to-gray-950 min-h-[410px] w-[300px] mx-auto rounded-md shadow-[0_0_8px_indigo] dark:shadow-[0_0_8px_white] hover:shadow-[0_0_12px_red] text-gray-700 dark:text-white'>
             <h2 className="my-4 font-bold text-2xl drop-shadow-[0_0_7px_violet] p-2 text-center">{props.data.name}</h2>
             <p className="w-[200px] h-[200px] [background-image:conic-gradient(red , yellow , green , blue , red)] bg-conic-gradient rounded-full border-4"></p>
             <div className=' text-yellow-500 font-semibold'>{props.data.singer}</div>
@@ -70,7 +70,7 @@ export default function MusicCard(props) {
 
             <div className="flex items-center justify-around w-full text-white">
                 <FontAwesomeIcon icon={faBackward} className='text-xl cursor-pointer hover:text-gray-500 w-6' size='' onClick={previousPlay} />
-                <div className="group w-fit relative">
+                <div className="group w-fit relative shadow-[0_0_2px_white] rounded-full">
                     <FontAwesomeIcon icon={faPlay} className='w-8 h-8 cursor-pointer group-hover:text-gray-500 bg-gray-950 rounded-full py-[10px] pl-[11px] pr-[8px] block group-active:hidden' size='2x' />
                     <FontAwesomeIcon icon={faPause} className='w-8 h-8 cursor-pointer group-hover:text-gray-500 bg-gray-950 rounded-full p-[10px] hidden group-active:block' size='2x' />
                     <div className="absolute w-14 h-14 z-10 top-0 left-0 cursor-pointer rounded-full" onClick={handleMusic}></div>

@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import MusicCard from './MusicCard'
+import MusicCard from './_components/MusicCard'
 
 const songs = [
   {
@@ -143,7 +143,7 @@ export default function Page() {
   }
 
   return (
-    <div className='flex flex-wrap gap-8 items-center justify-center p-4' style={{ minHeight: 'calc(100vh - 4rem)' }}>
+    <div className='flex flex-wrap gap-8 items-center justify-around py-4' style={{ minHeight: 'calc(100vh - 4rem)' }}>
       {
         songs?.map((song, index) =>
           <MusicCard data={song} functions = {{toggleButton , handleMusic , pause , nextPlay , previousPlay}} key={index} />

@@ -9,9 +9,9 @@ export default function ToggleMode() {
         document.body.classList.toggle('dark');
     }
   return (
-    <div className='cursor-pointer text-black *:bg-gray-500 dark:text-gray-300 flex items-center *:hover:scale-110 justify-center px-3 py-4 lg:py-1' onClick={toggleMode}>
-      <FontAwesomeIcon icon={faSun} className='rounded-full p-2 ' id='dark'/>
-      <FontAwesomeIcon icon={faMoon} className='rounded-full py-2 px-[10px] hidden' id='light'/>
+    <div className='cursor-pointer *:bg-gray-500 flex items-center *:hover:scale-110 justify-center h-8 w-8' onClick={toggleMode}>
+      <FontAwesomeIcon icon={faSun} className='rounded-full p-2 text-white' id='dark'/>
+      <FontAwesomeIcon icon={faMoon} className='rounded-full text-black py-2 px-[10px] hidden' id='light'/>
     </div>
   )
 }
