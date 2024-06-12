@@ -6,7 +6,6 @@ import { faBars, faBlog, faCartShopping, faHome, faMagnifyingGlass, faUser, faXm
 import ToggleMode from "./ToggleMode";
 
 export default function NavBar() {
-  const [search, setSearch] = useState('');
   const handleRight = () => {
     document.querySelector('.right-navbar').classList.toggle('hidden');
     document.querySelector('.cutX').classList.toggle('hidden');
