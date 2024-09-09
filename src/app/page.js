@@ -1,153 +1,79 @@
 "use client"
-import React, { useState } from 'react'
+import { useRef, useState } from 'react'
 import MusicCard from './_components/MusicCard'
-
-const songs = [
-  {
-    name: 'Ae-gujarne-waali-hwa',
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "All-is-well",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Badan-pe-sitare-lapete-hue",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Bande-hai-hm-uske",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Behti-hwa-sa-tha-wo",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Bella-ciao",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Bella-ciao-hindi",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Desh-mere",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Give-me-some",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Gori-tori-chunari",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Haal-kya-hai-dilon-ka",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Hai-zindgi-kitni-khubsurat",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Hey-ram",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Kamata-hum-bahut-kuchh-pr",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Kehdun-tumhe-ya-chup-rhun",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Log-kehte-hain-mai-sarabi-hun",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Dhire-dhire-meri-jindgi-me-aana",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Mere-umar-k-nav-jawaano",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Peele-peele-o-mere-raaja",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Tu-cheez-bdi-hai-mast",
-    singer: "Rahul Gandhi"
-  },
-  {
-    name: "Yaad-aa-rhi-hai",
-    singer: "Rahul Gandhi"
-  },
-]
+import { musics } from './_components/musicsData';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 
 export default function Page() {
-  const [player , setPlayer] = useState();
+  const musicRef = useRef();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [player, setPlayer] = useState(musics[0]);
 
-  const toggleButton = (cantainer) => {
-    let group = cantainer.querySelector('.group');
-    let svgs = group.querySelectorAll('svg');
-    svgs[0]?.classList?.toggle('block');
-    svgs[0]?.classList?.toggle('hidden');
-    svgs[1]?.classList?.toggle('block');
-    svgs[1]?.classList?.toggle('hidden');
+  const play = () => {
+    musicRef?.current?.play();
+    setIsPlaying(true);
   }
 
-  const handleMusic = (cantainer) => {
-    let audio = cantainer.querySelector('audio');
-    let musicAvatar = cantainer.querySelector('p');
-    if (audio.paused) {
-      musicAvatar.classList.toggle('animate-spin');
-      audio.play();
-    } else {
-      musicAvatar.classList.toggle('animate-spin');
-      audio.pause();
-    }
+  const pause = () => {
+    musicRef?.current?.pause();
+    setIsPlaying(false);
   }
 
-  const pause = (cantainer) => {
-    let musicAvatar = cantainer.querySelector('p');
-    let audio = cantainer.querySelector('audio');
-    if (!audio.paused) {
-      musicAvatar.classList.remove('animate-spin');
-      audio.pause();
-      handleButton(cantainer);
-    }
-  }
-
-  const nextPlay = (cantainer) => {
-    let nextCant = cantainer.nextElementSibling;
-    if (nextCant) {
-      pause(cantainer);
-      handleButton(nextCant);
-      playMusic(nextCant);
-    }
+  const nextPlay = () => {
+    setPlayer(prev => musics[(prev.id + 1) % musics.length]);
+    setIsPlaying(false);
   }
 
   const previousPlay = () => {
-    let cantainer = document.querySelector(`#${props.data.name}`);
-    let previousCant = cantainer.previousElementSibling;
-    if (previousCant) {
-      pause(cantainer);
-      handleButton(previousCant);
-      playMusic(previousCant);
+    setPlayer(prev => musics[(musics.length + prev.id - 1) % musics.length]);
+    setIsPlaying(false);
+  }
+
+  const handleMusic = () => {
+    if (musicRef?.current?.paused) {
+      play();
+    } else {
+      pause();
     }
   }
 
+  const selectMusic = (music) => {
+    setPlayer(music);
+    play();
+  }
+
   return (
-    <div className='flex flex-wrap gap-8 items-center justify-around py-4' style={{ minHeight: 'calc(100vh - 4rem)' }}>
-      {
-        songs?.map((song, index) =>
-          <MusicCard data={song} functions = {{toggleButton , handleMusic , pause , nextPlay , previousPlay}} key={index} />
-        )}
+    <div className='flex flex-wrap gap-2 items-start justify-around p-1' style={{ inHeight: 'calc(100vh - 4rem)' }}>
+      <MusicCard music={player} nextPlay={nextPlay} previousPlay={previousPlay} handleMusic={handleMusic} musicRef={musicRef} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+      <table className="w-full md:flex-1 shadow-[0_0_3px_black] rounded overflow-hidden">
+        <thead className='h-11 bg-slate-900/10 dark:bg-white/10 shadow-[0_0_2px_gray_inset]'>
+          <tr className="">
+            <th className="py-[3px]">SN.</th>
+            <th className="py-[3px]">Song</th>
+            <th className="py-[3px]">Singer</th>
+            <th className="py-[3px]">play</th>
+          </tr>
+        </thead>
+        <tbody className=''>
+          {
+            musics?.map((music, index) =>
+              <tr key={index} className={`font-normal font-mono ${music.id == player.id ? "bg-blue-600" : "even:bg-white/20 odd:bg-red-400/15 hover:bg-green-800/20"}`}>
+                <td className="py-[3px] text-center">{index + 1}</td>
+                <td className="py-[3px] text-center">{music?.name}</td>
+                <td className="py-[3px] text-center">{music?.singer}</td>
+                <td className="py-[3px] text-center flex items-center justify-center">
+                  {music.id == player.id && isPlaying ?
+                    <FontAwesomeIcon size='xs' icon={faPlay} className='h-4 bg-white/60 py-[10px] px-3 rounded-full shadow-[0_0_2px_gray] cursor-pointer' onClick={() => selectMusic(music)} />
+                    :
+                    <FontAwesomeIcon size='xs' icon={faPause} className='h-4 bg-white/60 py-[10px] px-3 rounded-full shadow-[0_0_2px_gray] cursor-pointer' onClick={() => selectMusic(music)} />
+                  }
+                </td>
+              </tr>
+            )
+          }
+        </tbody>
+      </table>
     </div>
   )
 }

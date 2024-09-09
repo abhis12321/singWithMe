@@ -13,11 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="">
-      <body className="dark bg-gray-300 text-gray-300 dark:bg-slate-950 dark:text-white">
+      <body className="bg-gray-300 text-gray-700 dark:bg-slate-950 dark:text-white">
         <NavBar />
-        <div className="" style={{minHeight:'calc(100vh - 4rem)'}}>
           {children}
-        </div>
         <Footer />
       </body>
     </html>
