@@ -52,14 +52,14 @@ export default function Footer() {
         </div>
         <div className="flex justify-center md:justify-around gap-4 items-start w-full md:w-[60%]">
           <div className="flex flex-col gap-2 justify-between items-start">
-            <Link href={'/'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>home</Link>
-            <Link href={'/bhakti'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>bhakti songs</Link>
-            <Link href={'patriotic'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>patriotic songs</Link>
+            <Link href={'/'} className='font-semibold py-1 px-3 rounded-md text-center'>home</Link>
+            <Link href={'/bhakti'} className='font-semibold py-1 px-3 rounded-md text-center'>bhakti songs</Link>
+            <Link href={'patriotic'} className='font-semibold py-1 px-3 rounded-md text-center'>patriotic songs</Link>
           </div>
           <div className="flex flex-col gap-2 justify-between items-start">
-            <Link href={'/hindi'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>hindi songs</Link>
-            <Link href={'/bhojpuri'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center'>bhojpuri songs</Link>
-            <Link href={'/english'} className='font-semibold py-1 px-3 rounded-md hover:text-gray-400 text-center' target='_blank'>english songs</Link>
+            <Link href={'/hindi'} className='font-semibold py-1 px-3 rounded-md text-center'>hindi songs</Link>
+            <Link href={'/bhojpuri'} className='font-semibold py-1 px-3 rounded-md text-center'>bhojpuri songs</Link>
+            <Link href={'/english'} className='font-semibold py-1 px-3 rounded-md text-center' target='_blank'>english songs</Link>
           </div>
         </div>
       </div>

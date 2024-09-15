@@ -11,23 +11,27 @@ export default function Page() {
   const [player, setPlayer] = useState(musics[0]);
 
   const play = () => {
-    musicRef?.current?.play();
-    setIsPlaying(true);
+    if(musicRef?.current) {
+      musicRef.current.play();
+      setIsPlaying(true);
+    }
   }
 
   const pause = () => {
-    musicRef?.current?.pause();
-    setIsPlaying(false);
+    if(musicRef?.current) {
+      musicRef.current.pause();
+      setIsPlaying(false);
+    }
   }
 
   const nextPlay = () => {
     setPlayer(prev => musics[(prev.id + 1) % musics.length]);
-    setIsPlaying(false);
+    // setIsPlaying(false);
   }
 
   const previousPlay = () => {
     setPlayer(prev => musics[(musics.length + prev.id - 1) % musics.length]);
-    setIsPlaying(false);
+    // setIsPlaying(false);
   }
 
   const handleMusic = () => {
@@ -55,7 +59,7 @@ export default function Page() {
   } , []);
 
   return (
-    <div className='relative flex flex-col gap-2 items-center justify-around p-1' style={{ inHeight: 'calc(100vh - 4rem)' }}>
+    <div className='flex flex-col gap-2 items-center justify-around p-1' style={{ inHeight: 'calc(100vh - 4rem)' }}>
       <MusicCard music={player} nextPlay={nextPlay} previousPlay={previousPlay} handleMusic={handleMusic} musicRef={musicRef} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
       <table className="w-full md:flex-1 shadow-[0_0_3px_black] rounded overflow-hidden">
         <thead className='h-11 bg-slate-900/10 dark:bg-white/10 shadow-[0_0_2px_gray_inset]'>
