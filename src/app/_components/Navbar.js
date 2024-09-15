@@ -13,7 +13,7 @@ export default function NavBar() {
   }
 
   return (
-    <div className="w-full bg-gradient-to-b from-gray-300 to-slate-500 dark:from-slate-950 dark:to-slate-800 lg:text-red-900 dark:text-gray-300 flex items-center justify-between h-16 px-4 xm:px-8 overflow-hidden">
+    <div className="sticky top-0 left-0 z-[1000] w-full bg-gradient-to-b from-gray-300/60 to-slate-500/60 dark:from-slate-950/60 dark:to-slate-800/60 lg:text-red-900 dark:text-gray-300 flex items-center justify-between h-16 px-4 xm:px-8 overflow-hidden backdrop-blur-lg">
       <div className="">
         <h2 className="font-bold text-3xl text-center rounded-md text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-600 w-fit leading-[4rem]"><span>#</span>singWithMe</h2>
       </div>

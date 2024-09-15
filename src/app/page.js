@@ -1,5 +1,5 @@
 "use client"
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import MusicCard from './_components/MusicCard'
 import { musics } from './_components/musicsData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -39,12 +39,23 @@ export default function Page() {
   }
 
   const selectMusic = (music) => {
-    setPlayer(music);
-    play();
+    if(player === music) {
+      handleMusic();
+    } else {
+      setPlayer(music);
+    }
   }
 
+  useEffect(() => {
+    play();
+  } , [player]);
+
+  useEffect(() => {
+    pause();
+  } , []);
+
   return (
-    <div className='flex flex-wrap gap-2 items-start justify-around p-1' style={{ inHeight: 'calc(100vh - 4rem)' }}>
+    <div className='relative flex flex-col gap-2 items-center justify-around p-1' style={{ inHeight: 'calc(100vh - 4rem)' }}>
       <MusicCard music={player} nextPlay={nextPlay} previousPlay={previousPlay} handleMusic={handleMusic} musicRef={musicRef} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
       <table className="w-full md:flex-1 shadow-[0_0_3px_black] rounded overflow-hidden">
         <thead className='h-11 bg-slate-900/10 dark:bg-white/10 shadow-[0_0_2px_gray_inset]'>
@@ -58,15 +69,15 @@ export default function Page() {
         <tbody className=''>
           {
             musics?.map((music, index) =>
-              <tr key={index} className={`font-normal font-mono ${music.id == player.id ? "bg-blue-600" : "even:bg-white/20 odd:bg-red-400/15 hover:bg-green-800/20"}`}>
+              <tr key={index} className={`font-normal font-mono ${music.id == player.id ? "playing-music" : "even:bg-white/20 odd:bg-red-400/15 hover:bg-green-800/20"}`}>
                 <td className="py-[3px] text-center">{index + 1}</td>
                 <td className="py-[3px] text-center">{music?.name}</td>
                 <td className="py-[3px] text-center">{music?.singer}</td>
                 <td className="py-[3px] text-center flex items-center justify-center">
-                  {music.id == player.id && isPlaying ?
-                    <FontAwesomeIcon size='xs' icon={faPlay} className='h-4 bg-white/60 py-[10px] px-3 rounded-full shadow-[0_0_2px_gray] cursor-pointer' onClick={() => selectMusic(music)} />
+                  {music.id === player.id && isPlaying ?
+                    <FontAwesomeIcon size='xs' icon={faPause} className='h-4 bg-white/60 py-[10px] px-[13px] rounded-full shadow-[0_0_2px_gray] cursor-pointer' onClick={() => selectMusic(music)} />
                     :
-                    <FontAwesomeIcon size='xs' icon={faPause} className='h-4 bg-white/60 py-[10px] px-3 rounded-full shadow-[0_0_2px_gray] cursor-pointer' onClick={() => selectMusic(music)} />
+                    <FontAwesomeIcon size='xs' icon={faPlay} className='h-4 bg-white/60 py-[10px] px-3 rounded-full shadow-[0_0_2px_gray] cursor-pointer' onClick={() => selectMusic(music)} />
                   }
                 </td>
               </tr>

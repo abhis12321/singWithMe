@@ -2,40 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }/* tailwind.css */
 
   .bg-conic-gradient {
-    background: conic-gradient(#ff0000, #00ff00, #0000ff , #ff0000);
+    background: conic-gradient(#ff0000, rgb(159, 206, 2), #0000ff , #ff0000);
   }
 
   .bg-card-gradient {
     background: linear-gradient(to bottom, rgb(2, 36, 87), #140140, rgb(2, 17, 49));    
+  }
+  .playing-music {  
+    background-color: rgb(5, 5, 162);
+    color: white;
+    /* animation: playing-music infinite linear;
+    animation-duration: 4s;
+    animation-delay: 0; */
+  }
+
+  @keyframes playing-music {
+    from {
+      background: conic-gradient(transparent , violet, pink , #ff0000, transparent 90%);  
+    } to {
+      background: conic-gradient(transparent 80%, #ff0000);  
+    }
   }
 }

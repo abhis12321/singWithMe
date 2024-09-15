@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-gray-500 text-center p-2 font-semibold"> <FontAwesomeIcon icon={faCopyright} className='text-sm'/> singWithMe! A public music platform!!</div>
+      <div className="text-gray-500 text-center p-2 font-semibold"> <FontAwesomeIcon icon={faCopyright} className='h-[14px]'/> singWithMe! A public music platform!!</div>
     </div>
   )
 }
